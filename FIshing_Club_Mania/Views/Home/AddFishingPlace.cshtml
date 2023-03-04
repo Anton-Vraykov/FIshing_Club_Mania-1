@@ -1,0 +1,28 @@
+﻿@model FishingPlaceViewModel
+
+<h3>Add Fishing place</h3>
+
+<form asp-controller="Home" asp-action="AddFishingPlace">
+<label class = "col-form-label" asp-for="Name"></label>
+<input class=" form-control" asp-for="Name"/>
+
+<label class = "col-form-label" asp-for="PictureURL"></label>
+<input class=" form-control" asp-for="PictureURL"/>
+
+<label class = "col-form-label" asp-for="Location"></label>
+<input class=" form-control" asp-for="Location"/>
+
+<label class = "col-form-label" asp-for="Reservation"></label>
+<input class=" form-control" asp-for="Reservation"/>
+
+<label class = "col-form-label" asp-for="Description"></label>
+<textarea class="form-control" asp-for="Description"></textarea>
+
+<label class = "col-form-label" asp-for="Price"></label>
+<input class=" form-control" asp-for="Price"/>
+
+<label class = "col-form-label" asp-for="Password"></label>
+<input class=" form-control" asp-for="Password"/>
+
+<button class="btn btn-primary">Add Fishing Place</button>
+</form>
