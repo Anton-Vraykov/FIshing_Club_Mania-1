@@ -42,9 +42,21 @@ namespace FIshing_Club_Mania.Services
         public void Delete(int Id)
         {
             var deletedFishingPlace = this.db.fishingPlace.FirstOrDefault(db => db.Id == Id);
+           
             if (deletedFishingPlace == null) { return; }
-            deletedFishingPlace.IsDeleted = true;
-            this.db.SaveChanges();
+            
+            if (deletedFishingPlace.Password != pass)
+            {
+                return;
+            }
+            else
+            {
+                deletedFishingPlace.IsDeleted = true;
+                this.db.SaveChanges();
+            }
+
+
+            
         }
 
         public FishingPlaceService GetById(int id)

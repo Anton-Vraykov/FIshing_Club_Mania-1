@@ -62,6 +62,14 @@ namespace FIshing_Club_Mania.Controllers
 
             return View();
         }
+        public IActionResult Pictures()
+        {
+            return View();
+        }
+        public IActionResult TheChalenge()
+        {
+            return View();
+        }
         public IActionResult Delete(int fishingPlaceId)
         {
             this.fishPlaceServices.Delete(fishingPlaceId);
