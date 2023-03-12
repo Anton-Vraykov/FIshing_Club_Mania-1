@@ -45,17 +45,8 @@ namespace FIshing_Club_Mania.Services
            
             if (deletedFishingPlace == null) { return; }
             
-            if (deletedFishingPlace.Password != pass)
-            {
-                return;
-            }
-            else
-            {
-                deletedFishingPlace.IsDeleted = true;
-                this.db.SaveChanges();
-            }
-
-
+            deletedFishingPlace.IsDeleted = true;
+            this.db.SaveChanges();
             
         }
 
