@@ -19,7 +19,7 @@ namespace FIshing_Club_Mania.Controllers
         {
             this.fishPlaceServices = fishPlaceServices;
         }
-
+        
         public IActionResult Index()
         {
             return View();
@@ -70,9 +70,9 @@ namespace FIshing_Club_Mania.Controllers
         {
             return View();
         }
-        public IActionResult Delete(int fishingPlaceId)
+        public IActionResult Delete(int fishingPlaceId,int password)
         {
-            this.fishPlaceServices.Delete(fishingPlaceId);
+            this.fishPlaceServices.Delete(fishingPlaceId,password);
             return Ok();
         }
         [HttpPost]
@@ -99,7 +99,7 @@ namespace FIshing_Club_Mania.Controllers
                 Reservation = fishingPlace.Reservation,
                 Price = fishingPlace.Price,
                 Description = fishingPlace.Description,
-                Password = fishingPlace.Password,
+               Password = fishingPlace.Password,
             };
         }
         private FishingPlaceViewModel GetFishingPlaceViewModel(FishingPlaceService f)

@@ -21,14 +21,14 @@
 <label class = "col-form-label" asp-for="Price"></label>
 <input class=" form-control" asp-for="Price"/>
 
-<label class = "col-form-label" asp-for="Password"></label>
-<input class=" form-control" asp-for="Password"/>
+<label class="col-form-label" asp-for="Password"></label>
+ <input id="pass" class="form-control" type="password" asp-for="Password"/>
+
 <input hidden asp-for="Id"/>
 <div>
     <button class="btn btn-primary">Edit Fishing place</button>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delite-Modal">Delete Fishing Place</button>
 </div>
-
 </form>
 
 <div class="modal fade" id="Delite-Modal" tabindex="-1" role="dialog" aria-labelledby="Delite-Modal" aria-hidden="true">
@@ -51,8 +51,11 @@
   </div>
 </div>
 <script>
-const deleteFishingPlace= () => { 
-    fetch('/Home/Delete?fishingPlaceId=' + @Model.Id).then(() => redirectToPrivacy().catch((error) => { console.error('Error:', error); }));
+
+    const deleteFishingPlace = () => {
+        let pass = document.getElementById('pass').value;
+        fetch(`/Home/Delete?fishingPlaceId=${@Model.Id}&password=${pass}`)
+    .then(() => redirectToPrivacy().catch((error) => { console.error('Error:', error); }));
 }
 const redirectToPrivacy = () => {
     window.location = "/Home/Privacy";

@@ -13,8 +13,8 @@ namespace FIshing_Club_Mania.DataModels
         public string Description { get; set; }
         public double Price { get; set; }
         public bool IsDeleted { get; set; }
-        public int Password { get; set; }
-        
+
+        public  int Password { get; set; }
 
 
     }

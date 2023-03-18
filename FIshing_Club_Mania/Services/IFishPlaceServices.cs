@@ -10,7 +10,7 @@ namespace FIshing_Club_Mania.Services
         void Add(FishingPlaceService fishingPlace);
         FishingPlaceService GetById(int id);
         void Update(FishingPlaceService fishingPlace);
-        void Delete(int Id);
+        void Delete(int Id,int password);
         
         
     }

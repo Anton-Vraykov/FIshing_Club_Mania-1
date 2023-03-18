@@ -10,12 +10,13 @@ namespace FIshing_Club_Mania.Services
     public class FishPlaceServices : IFishPlaceServices
     {
         private readonly AppDbContext db;
+        private const int Password = 123;
         public FishPlaceServices(AppDbContext db)
         {
             this.db = db;
         }
 
-        private readonly int pass = 123;
+        
         public void Add(FishingPlaceService fishingPlace)
         {
             if (fishingPlace.Reservation <= System.DateTime.Now)
@@ -26,24 +27,29 @@ namespace FIshing_Club_Mania.Services
             {
                 return;
             }
-            if (fishingPlace.Password != pass)
-            {
-                return;
-            }
-            else
-            {
-                fishingPlace.Password = 8657;
-            }
+           // if (fishingPlace.Password != Password)
+           // {
+           //     return;
+            //}
+            //else
+           // {
+           //     fishingPlace.Password = 8657;
+           // }
 
             this.db.fishingPlace.Add(fishingPlace);
             this.db.SaveChanges();
         }
 
-        public void Delete(int Id)
+        public void Delete(int Id,int password)
         {
+            if (password!=Password)
+            {
+                return;
+            }
             var deletedFishingPlace = this.db.fishingPlace.FirstOrDefault(db => db.Id == Id);
            
             if (deletedFishingPlace == null) { return; }
+            
             
             deletedFishingPlace.IsDeleted = true;
             this.db.SaveChanges();
@@ -74,13 +80,13 @@ namespace FIshing_Club_Mania.Services
             {
                 return;
             }
-            if (fishingPlace.Password != pass)
+            if (fishingPlace.Password != Password)
             {
                 return;
             }
-            else
+           else
             {
-                fishingPlace.Password = 8657;
+               fishingPlace.Password = 8657;
             }
 
             var fishingPlaceToUpdate = this.db.fishingPlace.FirstOrDefault(x => x.Id == fishingPlace.Id);
