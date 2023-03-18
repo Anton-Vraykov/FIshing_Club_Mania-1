@@ -27,14 +27,11 @@ namespace FIshing_Club_Mania.Services
             {
                 return;
             }
-           // if (fishingPlace.Password != Password)
-           // {
-           //     return;
-            //}
-            //else
-           // {
-           //     fishingPlace.Password = 8657;
-           // }
+            if (fishingPlace.Password != Password)
+            {
+              return;
+            }
+            
 
             this.db.fishingPlace.Add(fishingPlace);
             this.db.SaveChanges();

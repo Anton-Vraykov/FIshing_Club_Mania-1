@@ -2,12 +2,9 @@
 using FIshing_Club_Mania.Models;
 using FIshing_Club_Mania.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace FIshing_Club_Mania.Controllers
 {
