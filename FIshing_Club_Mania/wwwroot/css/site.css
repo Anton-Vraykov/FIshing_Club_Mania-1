@@ -3,9 +3,16 @@ for details on configuring this project to bundle and minify static web assets. 
 #fishingPlace-container{
     background-color:palegreen
 }
+#fishingPlace1-container {
+    background-color: black
+}
 #fishingPlace-container:hover {
     background-color: #ffddcc;
      cursor: pointer;
+}
+#fishingPlace1-container:hover {
+    background-color: white;
+    cursor: pointer;
 }
 a.navbar-brand {
     white-space: normal;

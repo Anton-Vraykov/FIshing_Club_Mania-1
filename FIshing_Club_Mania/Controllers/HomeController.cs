@@ -21,6 +21,16 @@ namespace FIshing_Club_Mania.Controllers
         {
             return View();
         }
+        public IActionResult Fish()
+        {
+            
+            return View();
+        }
+        public IActionResult FishingClubMania()
+        {
+
+            return View();
+        }
 
         public IActionResult Privacy(int currentPage=1)
         {
